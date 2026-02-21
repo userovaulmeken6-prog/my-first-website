@@ -3,11 +3,77 @@
 <title>qadam.045</title>
 </head>
 <body>
-<marquee direction=behavior> Salem bul menin birinshi saytim</marquee>
-<h1 align="center"> ХХI ғасыр технология заманы </h1>
-<p> Бүгінгі заманымызда технология өте жоғары қарқынмен дамып келуде.Солардың ішіндегі ең жетістігі <i> жасанды интеллект </i> болып табылады.
-Жасанды интеллект Өзбекстан аумағына
- <u>2023<u/> 
-жылдан бастап ене бастады.</p>
+<h1> <marquee direction=behavior> Salem bul menin birinshi saytim</marquee> </h1>
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Онлайн тест</title>
+<style>
+body { font-family: Arial; background:#f4f4f4; padding:20px; }
+.container { background:white; padding:20px; border-radius:10px; max-width:600px; margin:auto; }
+button { padding:10px 15px; margin-top:15px; }
+.result { font-weight:bold; margin-top:15px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>Онлайн тест</h2>
+
+<form id="quizForm">
+
+<p>1. Қазақстанның астанасы?</p>
+<input type="radio" name="q1" value="0"> Алматы<br>
+<input type="radio" name="q1" value="1"> Астана<br>
+<input type="radio" name="q1" value="0"> Шымкент<br>
+
+<p>2. 5 + 3 = ?</p>
+<input type="radio" name="q2" value="0"> 6<br>
+<input type="radio" name="q2" value="1"> 8<br>
+<input type="radio" name="q2" value="0"> 9<br>
+
+<p>3. HTML не үшін қолданылады?</p>
+<input type="radio" name="q3" value="1"> Сайт жасау үшін<br>
+<input type="radio" name="q3" value="0"> Видео монтаж үшін<br>
+<input type="radio" name="q3" value="0"> Ойын ойнау үшін<br>
+
+<p>4. Компьютердің негізгі құрылғысы?</p>
+<input type="radio" name="q4" value="1"> Процессор<br>
+<input type="radio" name="q4" value="0"> Телефон<br>
+<input type="radio" name="q4" value="0"> Теледидар<br>
+
+<p>5. Интернет дегеніміз?</p>
+<input type="radio" name="q5" value="1"> Ғаламдық желі<br>
+<input type="radio" name="q5" value="0"> Ойын түрі<br>
+<input type="radio" name="q5" value="0"> Бағдарлама<br>
+
+<button type="button" onclick="checkAnswers()">Нәтижені көру</button>
+
+</form>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+function checkAnswers() {
+let total = 0;
+let form = document.forms["quizForm"];
+
+for (let i = 1; i <= 5; i++) {
+let radios = form["q"+i];
+for (let j = 0; j < radios.length; j++) {
+if (radios[j].checked) {
+total += Number(radios[j].value);
+}
+}
+}
+
+document.getElementById("result").innerHTML = 
+"Сіздің нәтижеңіз: " + total + " / 5";
+}
+</script>
+
 </body>
 </html>
